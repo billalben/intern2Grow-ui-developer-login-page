@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login page with social media login and email login"
+    />
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Login Page</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom style -->
+    <link rel="stylesheet" href="./assets/style/style.css" />
+    <!-- preload image -->
+    <link
+      rel="preload"
+      href="./assets/images/login-bg.png"
+      as="image"
+      type="image/svg+xml"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="login-container">
+        <div class="login-left">
+          <div class="login-left-content">
+            <h1 class="login-title">Work with us</h1>
+            <p class="login-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              lobortis maximus nunc, ac rhoncus odio congue quis. Sed ac semper
+              orci, eu porttitor lacus.
+            </p>
+          </div>
+        </div>
+        <div class="login-right">
+          <div class="login-form-container">
+            <p class="sign-up">
+              Don’t have an acount?
+              <a href="#" class="login-signup-link">Sign up</a>
+            </p>
+            <h2 class="login-form-title">Welcome back!</h2>
+            <button class="login-btn login-btn-google">
+              <img
+                src="./assets/images/google-icon.svg"
+                class="social-icon"
+                alt="google icon"
+              />
+              <span>Continue with Google</span>
+            </button>
+            <button class="login-btn login-btn-twitter">
+              <img
+                src="./assets/images/twitter-icon.svg"
+                class="social-icon"
+                alt="twitter icon"
+              />
+              <span>Continue with Twitter</span>
+            </button>
+            <div class="login-divider"><span>OR</span></div>
+            <form class="login-form">
+              <div class="login-wrapper">
+                <label for="email" class="login-label">
+                  Enter your email address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="login-input"
+                  required
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="login-wrapper password">
+                <label for="password" class="login-label">
+                  Enter your password
+                </label>
+                <span class="password-eye">
+                  <img
+                    src="./assets/images/show-password.svg"
+                    class="password-eye-icon"
+                    alt="hide password icon"
+                  />
+                  <span>Show</span>
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="login-input"
+                  required
+                  placeholder="Enter your password"
+                />
+              </div>
+              <a href="#" class="login-forgot-password">Forget your password</a>
+              <button type="submit" class="login-btn login-btn-signin">
+                Sign in
+              </button>
+            </form>
+            <div class="login-footer">
+              <p>
+                Don't have an account?
+                <a href="#" class="login-signup-link">Sign up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const passwordEye = document.querySelector(".password-eye");
+      const passwordInput = document.querySelector(".password input");
+
+      passwordEye.addEventListener("click", () => {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          passwordEye.children[0].src = "./assets/images/hide-password.svg";
+          passwordEye.children[1].textContent = "Hide";
+        } else {
+          passwordInput.type = "password";
+          passwordEye.children[0].src = "./assets/images/show-password.svg";
+          passwordEye.children[1].textContent = "Show";
+        }
+      });
+    </script>
+  </body>
+</html>
